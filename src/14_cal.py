@@ -22,3 +22,27 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+import sys
+import calendar
+from datetime import datetime
+
+user_input = sys.argv
+today = datetime.today()
+
+# If no user input, print calendar for current month
+if len(user_input) == 1:
+    print(calendar.month(today.year, today.month))
+
+# If one argument only, assume it's the month and print that month for this year
+elif len(user_input) == 2:
+    month = int(user_input[1])
+    print(calendar.month(today.year, month))
+
+elif len(user_input) == 3:
+    month = int(user_input[1])
+    year = int(user_input[2])
+    print(calendar.month(year, month))
+
+else:
+    print('\nThe program expects month and year as integers, separated by spaces. Example: "5 2001". Try again.')
